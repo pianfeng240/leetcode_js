@@ -3,6 +3,8 @@
  *
  * [136] 只出现一次的数字
  * 思路： 所有元素异或后，值是重复的元素
+ * 时间复杂度：O(n)
+ * 空间复杂度: O(1)
  */
 
 // @lc code=start
@@ -11,10 +13,11 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-  let res = 0
-  nums.forEach(num => {
-    res = res ^ num;
-  })
+  let res = nums[0]
+  for (let i = 1; i < nums.length; i++) {
+    res ^= nums[i]
+  }
+  
   return res;
 };
 // @lc code=end

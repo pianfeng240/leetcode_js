@@ -2,7 +2,7 @@
  * @lc app=leetcode.cn id=189 lang=javascript
  *
  * [189] 旋转数组
- * 思路：旋转k次
+ * 思路：每次把所有元素右移，共k次
  * 时间复杂度：O(k * n)
  * 空间复杂度：O(1)
  */
@@ -28,13 +28,14 @@ var rotate = function(nums, k) {
  * 使用反转
  * 思路：旋转k次，k%n个尾部元素被移动到头部，剩下的元素向后移动。
  * 先将所有元素反转，再反转前k%n个，再反转后面的
- * 
+ * 时间复杂度：O(n),一共反转3次
+ * 空间复杂度: O(1)
  */
 rotate = function (nums, k) {
   k %= nums.length;
 
   var reverse = function (nums, start, end) {
-    while (start < end && end < nums.length) {
+    while (start < end) {
       const temp = nums[start]
       nums[start] = nums[end]
       nums[end] = temp

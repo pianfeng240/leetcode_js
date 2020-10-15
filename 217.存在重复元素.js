@@ -2,8 +2,9 @@
  * @lc app=leetcode.cn id=217 lang=javascript
  *
  * [217] 存在重复元素
- * 思路1：利用hash表，时间复杂度O(n),空间复杂度O(n)
- * 思路2：先排序，再遍历，看是否有重复元素
+ * 思路：利用hash表
+ * 时间复杂度 O(n)
+ * 空间复杂度 O(n)
  */
 
 // @lc code=start
@@ -22,6 +23,11 @@ var containsDuplicate = function(nums) {
   return false;
 };
 
+/**
+ * 思路：先排序，再遍历元素看是否重复
+ * 时间复杂度: O(nlogn)
+ * 空间复杂度：O(1)
+ */
 containsDuplicate = function(nums) {
   nums.sort();
   for(let i = 0; i < nums.length; i++) {
