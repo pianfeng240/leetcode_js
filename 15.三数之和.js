@@ -4,9 +4,11 @@
  * [15] 三数之和
  */
 
-
 // @lc code=start
 /**
+ * 思路：先排序，遍历数组，在剩下的元素中找两数之和等于target-当前元素的二元组
+ * 时间复杂度 O(n^2) 两层循环
+ * 空间复杂度 O(nlogn) 排序
  * @param {number[]} nums
  * @return {number[][]}
  */
