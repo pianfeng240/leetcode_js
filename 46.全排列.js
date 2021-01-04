@@ -6,32 +6,32 @@
 
 // @lc code=start
 /**
+ * 思路：回溯，
  * @param {number[]} nums
  * @return {number[][]}
  */
-var permute = function(nums) {
-    const res = []
+var permute = function (nums) {
+  const res = [];
 
-    const backtrack = (path, nums) => {
-        if (path.length === nums.length) {
-            res.push(path.slice())
-            return
-        }
-
-        for (let i = 0; i < nums.length; i++) {
-            const element = nums[i];
-            if (path.includes(element)) {
-                continue;
-            }
-            path.push(element)
-            backtrack(path, nums)
-            path.pop(element)
-        }
+  const backtrack = (path, nums) => {
+    if (path.length === nums.length) {
+      res.push(path.slice());
+      return;
     }
 
-    backtrack([], nums)
+    for (let i = 0; i < nums.length; i++) {
+      const element = nums[i];
+      if (path.includes(element)) {
+        continue;
+      }
+      path.push(element);
+      backtrack(path, nums);
+      path.pop(element);
+    }
+  };
 
-    return res;
+  backtrack([], nums);
+
+  return res;
 };
 // @lc code=end
-
